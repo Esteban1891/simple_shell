@@ -1,4 +1,4 @@
-#include "jvc.h"
+#include "shell.h"
 /**
  *_strcmp - funtion compare two string
  *@s1: Punter one
