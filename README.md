@@ -1,77 +1,54 @@
-    <h1><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Holberton Shell - un simple caparaz&oacute;n</span></span></h1>
-    <p><strong><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Holberton Shell (hsh) es un shell de comandos simple para cualquier sistema operativo Mac y Linux. </span><span style="vertical-align: inherit;">Hsh tiene algunas de las caracter&iacute;sticas iniciales o simples presentes en el shell bash. </span><span style="vertical-align: inherit;">Este caparaz&oacute;n fue hecho para un proyecto en la Escuela Holberton.</span></span></strong></p>
-    <h5>&nbsp;</h5>
-    <hr />
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">La operaci&oacute;n hsh es como cualquier otro comando, como bash o zsh. </span><span style="vertical-align: inherit;">Si no necesita ayuda para el contenido del comando y no sabe cu&aacute;l es, solicite ayuda hsh ejecut&aacute;ndola en el terminal.</span></span></p>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">El comando hsh se puede compilar con GCC 4.8.5 o posterior. </span></span><br /><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp; adem&aacute;s, hsh se compila solo con " </span></span><em><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">gcc 4.8.4 -Wall -Werror -Wextra -pedantic * .c -o simple_shell".</span></span></em></p>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Para iniciar el comando creado "hsh", simplemente escriba = ./simple_shell</span></span></p>
-    <ul>
-    <li><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;&nbsp;en la terminal de su sistema operativo, ya sea mac o linux.</span></span></li>
-    </ul>
-    <h4>&nbsp;</h4>
-    <hr />
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">mando</span></span></p>
-    <hr />
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Cualquier programa en su computadora puede usarse como un comando en hsh. </span><span style="vertical-align: inherit;">Si el programa est&aacute; ubicado en cualquiera de los directorios en [RUTA - incluir enlace], entonces escribir el nombre de archivo es suficiente para ejecutar el comando. </span><span style="vertical-align: inherit;">De lo contrario, se requiere una ruta completa al programa</span></span></p>
-    <pre><code>/Desktop/Holberton/my_echo Hello Holberton
-    </code></pre>
-    <h5><a id="user-content-command-seperation" class="anchor" href=""></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">comando de separaci&oacute;n</span></span></h5>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Los comandos y cualquier argumento est&aacute;n separados por a&nbsp; </span></span><code>' '</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;. </span><span style="vertical-align: inherit;">Comandos terminan, ya sea con un salto de l&iacute;nea (es decir Return Key) o una&nbsp; </span></span><code>;</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">,&nbsp; </span></span><code>&amp;&amp;</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">o&nbsp; </span></span><code>||</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">.</span></span></p>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Para ingresar m&aacute;s de un comando en una l&iacute;nea,&nbsp; </span></span><code>;</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;se puede usar a para separar los comandos. </span><span style="vertical-align: inherit;">Los comandos se leen y ejecutan de izquierda a derecha.</span></span></p>
-    <pre><code>echo Hello Holberton ; ls
-    </code></pre>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Si los comandos est&aacute;n separados por&nbsp; </span></span><code>&amp;&amp;</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;, el comando m&aacute;s a la izquierda se lee y ejecuta y si la ejecuci&oacute;n falla, no se ejecutan otros comandos, de lo contrario, se ejecutar&aacute; el siguiente comando en l&iacute;nea. </span><span style="vertical-align: inherit;">Si los comandos est&aacute;n separados&nbsp; </span></span><code>||</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;, independientemente de la falla de ejecuci&oacute;n o el &eacute;xito del comando m&aacute;s a la izquierda, se ejecutan todos los comandos sucesivos.</span></span></p>
-    <h5><a id="user-content-switches--flags" class="anchor" href=""></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Interruptores y Banderas</span></span></h5>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Los argumentos de interruptores y banderas de comandos tambi&eacute;n son compatibles con hsh. </span><span style="vertical-align: inherit;">La mayor&iacute;a de los interruptores comienzan con un bombo,&nbsp; </span></span><code>-</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;y siempre de alguna manera afectan el comando de una manera. </span><span style="vertical-align: inherit;">Por ejemplo, cuando un usuario ingresa:</span></span></p>
-    <pre><code>ls -a
-    </code></pre>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Los&nbsp; </span></span><code>ls</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;comandos enumeran todos los directorios y archivos en el directorio de trabajo actual. </span><span style="vertical-align: inherit;">Sin embargo, incluido el conmutador&nbsp; </span></span><code>-a</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;, tambi&eacute;n incluir&aacute; todos los archivos y directorios, incluidos los ocultos.</span></span></p>
-    <h5><a id="user-content-comments" class="anchor" href=""></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Comentarios</span></span></h5>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">hsh proporciona soporte para comentarios agregados a la entrada est&aacute;ndar. </span><span style="vertical-align: inherit;">Los comentarios pueden introducirse colocando un&nbsp; </span></span><code>#</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;antes de cualquier declaraci&oacute;n. </span><span style="vertical-align: inherit;">Los comentarios son ignorados por hsh.</span></span></p>
-    <pre><code>echo # Hello Holberton
-    </code></pre>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">El comando anterior no escribir&aacute; Hello Holberton en la salida est&aacute;ndar.</span></span></p>
-    <h5><a id="user-content-list-of-useful-commands" class="anchor" href=""></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Lista de comandos &uacute;tiles.</span></span></h5>
-    <p><code>cat</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;- concatenar e imprimir archivos a resultados sobresalientes</span></span></p>
-    <p><code>cp</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;- copiar archivos a otro archivo</span></span></p>
-    <p><code>grep</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;- busca en un archivo un patr&oacute;n especificado</span></span></p>
-    <p><code>less</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;- permite el movimiento hacia atr&aacute;s en el archivo, as&iacute; como el movimiento hacia adelante</span></span></p>
-    <p><code>ls</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;- enumera todos los archivos y directorios del directorio de trabajo actual</span></span></p>
-    <p><code>mv</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;- mueve un archivo a otro archivo</span></span></p>
-    <p><code>pwd</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;- imprime el directorio de trabajo actual</span></span></p>
-    <h4><a id="user-content-builtins" class="anchor" href=""></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Builtins</span></span></h4>
-    <hr />
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Hay varias incorporaciones programadas en el hsh. </span><span style="vertical-align: inherit;">A continuaci&oacute;n hay una descripci&oacute;n y uso para cada construcci&oacute;n.</span></span></p>
-    <h5><a id="user-content-env-setenv-unsetenv" class="anchor" href=""></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">env, setenv, unsetenv</span></span></h5>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Para imprimir una lista de todas las variables ambientales, </span></span><code>env</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;se puede usar </span><span style="vertical-align: inherit;">el incorporado&nbsp; </span><span style="vertical-align: inherit;">. </span><span style="vertical-align: inherit;">Cada variable ambiental y su valor se imprimen con una sintaxis de&nbsp; </span></span><code>key=value</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">. </span><span style="vertical-align: inherit;">Cada variable est&aacute; separada por una nueva l&iacute;nea.</span></span></p>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Para establecer una variable ambiental, el valor incorporado es&nbsp; </span></span><code>setenv</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">. </span><span style="vertical-align: inherit;">La sintaxis a usar&nbsp; </span></span><code>setenv</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;es&nbsp; </span></span><code>setenv key value</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">. </span><span style="vertical-align: inherit;">Si falta uno de los argumentos, se devuelve un error.</span></span></p>
-    <pre><code>setenv holberton betty
-    </code></pre>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Para eliminar una variable ambiental, </span></span><code>unsetenv</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;se puede usar </span><span style="vertical-align: inherit;">el incorporado&nbsp; </span><span style="vertical-align: inherit;">. </span><span style="vertical-align: inherit;">La sintaxis a usar&nbsp; </span></span><code>unsetenv</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;es&nbsp; </span></span><code>unsetenv key</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">. </span><span style="vertical-align: inherit;">Si no </span></span><code>key</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;se proporciona </span><span style="vertical-align: inherit;">ning&uacute;n&nbsp; </span><span style="vertical-align: inherit;">valor, se devuelve un error.</span></span></p>
-    <pre><code>unsetenv holberton
-    </code></pre>
-    <h5><a id="user-content-cd" class="anchor" href=""></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">discos compactos</span></span></h5>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">El&nbsp; </span></span><code>cd</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;comando cambia el directorio de trabajo del shell. </span><span style="vertical-align: inherit;">La sintaxis para usar el comando es&nbsp; </span></span><code>cd DIR</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">. </span><span style="vertical-align: inherit;">Si no&nbsp; </span></span><code>DIR</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;se da, el valor predeterminado es la variable de shell HOME. </span><span style="vertical-align: inherit;">Se necesita la ruta completa del directorio. </span><span style="vertical-align: inherit;">Para cambiar el directorio a su padre, </span></span><code>..</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;se puede usar </span><span style="vertical-align: inherit;">el argumento&nbsp; </span><span style="vertical-align: inherit;">.</span></span></p>
-    <h5><a id="user-content-history" class="anchor" href=""></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">historia</span></span></h5>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Para imprimir una lista de los comandos anteriores utilizados, </span></span><code>history</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;se puede usar </span><span style="vertical-align: inherit;">el comando&nbsp; </span><span style="vertical-align: inherit;">. </span><span style="vertical-align: inherit;">Se imprimir&aacute;n los 50 comandos anteriores. </span><span style="vertical-align: inherit;">El historial de todos los comandos se escribe en el&nbsp; </span></span><code>.simple_shell_history</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;archivo.</span></span></p>
-    <h5><a id="user-content-help" class="anchor" href=""></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">ayuda</span></span></h5>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Para recibir una descripci&oacute;n y el uso de sintaxis de un comando espec&iacute;fico, puede usar el&nbsp; </span></span><code>help</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;comando. </span><span style="vertical-align: inherit;">Para usar el&nbsp; </span></span><code>help</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;builtin, la sintataxis es la siguiente</span></span></p>
-    <pre><code>help cd
-    </code></pre>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">El resultado incluir&iacute;a el uso seguido de una definici&oacute;n.</span></span></p>
-    <pre><code>cd usage: cd DIR
-        Change the current directory to DIR
-    </code></pre>
-    <h5><a id="user-content-exit" class="anchor" href=""></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">salida</span></span></h5>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Para salir del shell, el usuario puede usar el&nbsp; </span></span><code>exit</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;incorporado. </span><span style="vertical-align: inherit;">Para usar&nbsp; </span></span><code>exit</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">, </span></span><code>n</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;se puede dar </span><span style="vertical-align: inherit;">un n&uacute;mero de estado&nbsp; </span><span style="vertical-align: inherit;">. </span><span style="vertical-align: inherit;">Si&nbsp; </span></span><code>n</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;se omite, el estado de salida es el del &uacute;ltimo comando ejecutado.</span></span></p>
-    <pre><code>exit 1
-    </code></pre>
-    <h4><a id="user-content-exiting-commands-and-hsh" class="anchor" href=""></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Salir de comando y hsh</span></span></h4>
-    <hr />
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Para salir de un proceso o comando,&nbsp; </span></span><code>ctrl c</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;se utiliza. </span><span style="vertical-align: inherit;">Control-C interrumpe un proceso y lo hace abortar.</span></span></p>
-    <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Para salir del shell hsh, el usuario puede hacer uno de los siguientes,&nbsp; </span></span><code>ctrl D</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&nbsp;o&nbsp; </span></span><code>exit n</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">. </span><span style="vertical-align: inherit;">Al salir con&nbsp; </span></span><code>ctrl D</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">, se da un estado de salida de 0. </span><span style="vertical-align: inherit;">Utilizando&nbsp; </span></span><code>exit</code><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">, puede ingresar su estado de salida o est&aacute; predeterminado al estado del &uacute;ltimo comando ejecutado.</span></span></p>
-
-
-
+<h1>Holberton Shell - a simple shell</h1>
+<p><strong>Holberton Shell (hsh) is a simple command shell for any Mac and Linux operating system. Hsh has some of the initial or simple characteristics present in the bash shell. This shell was made for a project at the Holberton School.</strong></p>
+<h5>&nbsp;</h5>
+<hr />
+<p>hsh operation is like any other command, such as bash or zsh. If you do not need help for the command content and do not know what it is, ask for hsh help by running it in the terminal.</p>
+<p>hsh command can be compiled with GCC 4.8.5 or newer.<br />&nbsp; furthermore, hsh is compiled only with "<em>gcc 4.8.4 -Wall -Werror -Wextra -pedantic * .c -o simple_shell".</em></p>
+<p>To start the created command "hsh", just type = ./simple_shell</p>
+<ul>
+<li>&nbsp;&nbsp;in&nbsp;the terminal of your operating system, being mac or linux.</li>
+</ul>
+<h4>&nbsp;</h4>
+<hr />
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>command</p>
+<hr />
+<pre><code>&nbsp;</code></pre>
+<p>Commands and arguments are always divided by quotation marks &lt;''&gt;. in the terminal the commands end on a new line (so to speak, by the return key) or a ;, or ||.</p>
+<p>to add one more new command line, a; can be used to issue commands. Commands are read and executed from left to right.</p>
+<p>echo Hello Holberton; ls</p>
+<p>If the commands are independent by the "&amp;&amp;", the command that is furthest to the left can be read and executed, and if the execution arrives it does not work or marks an error, the next other commands are not executed, if not the opposite, will execute the next command that is online. If the commands are independent by || , regardless of the error or execution failure or the correct operation of the leftmost command, all the commands will be executed successfully.</p>
+<p><strong>&nbsp;&nbsp;Flags and switches</strong><br />&nbsp;arguments, switches and command flags are also reconcilable with hsh. Most switches start with a bass, and almost always somehow get there by affecting the command in some way. For example, when a user wants to enter the following command:</p>
+<p>ls -a</p>
+<p>The ls commands will list all directories and files in the current task directory that can be found in a fully enumerated way. in addition, including the -a, it will also add all the directories and folders, even the hidden ones as I said above.</p>
+<p><strong>Comments</strong><br />hsh supplies bases for accumulated comments to the standard input. To get to the comments, put a "#" before any declaration. Comments are ignored by hsh.</p>
+<p><em>echo # Hello Holberton</em></p>
+<p><br />The last command will not be able to write Hello Holberton to the standard output.</p>
+<p><strong>List of useful commands.</strong></p>
+<p><br /><em>cat</em> - Basically what the cat command does is read data from files and display their contents, concatenated. And it is the easiest way to display the contents of a file on the command line.</p>
+<p><em>cp</em> - copy files to another file in our terminal like cp filename and then pass the copy to another address like / holberton.</p>
+<p><em>grep</em>: take a regular expression from the command line, read standard input or a list of files, and print the lines that contain matches for the regular expression in a few words search a file for a pattern.</p>
+<p><em>less</em>: text file viewer that works in command interpreters.</p>
+<p><em>ls</em> - lists all files and directories in the current working directory</p>
+<p><em>mv</em>: move a file to another file</p>
+<p><em>pwd</em>: print current working directory</p>
+<p><em>Builtins</em><br />There are several inclusion scheduled in the hsh. Below is a detailed description and use for each construction.</p>
+<p><strong>env, setenv, unsetenv</strong><br />To print a list of all environmental variables, you can use the built-in environment. Each environmental variable and its value are printed with a key = value syntax. Each variable is separated by a new line.</p>
+<p>To set an environmental variable, the built-in value is setenv. The syntax for using setenv is the key value of setenv. If one of the arguments is missing, an error is returned.</p>
+<p><strong>setenv holberton betty</strong><br />To remove an environmental variable, you can use the built-in unsetenv. The syntax for using unsetenv is the unsetenv key. If no key value is supplied, an error is returned.</p>
+<p>unsetenv holberton<br /><strong>CD</strong></p>
+<p><br />The cd command changes the working directory of the shell. The syntax for using the command is cd DIR. If DIR is not provided, it is default in the HOME shell variable. The full path of the directory is required. To change the directory to its parent, you can use the argument ...</p>
+<p><strong>history</strong><br />To print a list of previous commands used, you can use the command history. The previous 50 commands will be printed. The history of all commands is written to the .simple_shell_history file.</p>
+<p><strong>help</strong><br />To get a description and use of syntax for a specific command, you can use the help command. To use the built-in help, the syntax is as follows</p>
+<p><strong>help cd</strong><br />The result would include usage followed by a definition.</p>
+<p><strong>use of cd: cd DIR</strong><br />Change current directory to DIR<br />exit<br />To exit the shell, the user can exit using exit or ctrl d, a status number can be given, n. If n is omitted, the exit status is that of the last command executed.</p>
+<p><em><strong>output 1</strong></em></p>
+<h5><a id="user-content-exit" class="anchor" href="https://github.com/Esteban1891/simple_shell/blob/master/README.md#exit"></a>exit</h5>
+<p>To exit out of the shell, the user may use the&nbsp;<code>exit</code>&nbsp;builtin. To use&nbsp;<code>exit</code>, a status number,&nbsp;<code>n</code>&nbsp;can be given. If&nbsp;<code>n</code>&nbsp;is ommited, the exit status is that of the last command executed.</p>
+<pre><code>exit 1
+</code></pre>
+<h4><a id="user-content-exiting-commands-and-hsh" class="anchor" href="https://github.com/Esteban1891/simple_shell/blob/master/README.md#exiting-commands-and-hsh"></a>Exiting command and hsh</h4>
+<hr />
+<p>To exit out of a process or command,&nbsp;<code>ctrl c</code>&nbsp;is used. Control-C interrupts a process and causes it to abort.</p>
+<p>To exit out of the hsh shell, the user can do one of the following,&nbsp;<code>ctrl D</code>&nbsp;or&nbsp;<code>exit n</code>. When exiting with&nbsp;<code>ctrl D</code>, an exit status of 0 is given. Using&nbsp;<code>exit</code>, you can input its exit status or it is defaulted to the status of the last command executed.</p>
