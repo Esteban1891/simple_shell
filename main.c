@@ -4,8 +4,12 @@ int main ()
 {
     int status = 0;
 
+	initiate_shell();
+
     while (status != EOF) {
 
+
+	
 		/* get the input the command line */
 		char *argv = _getlines();
 		/* split the input line with strtok funtion and return 2d ponter */

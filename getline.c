@@ -10,9 +10,9 @@ char *_getlines(void)
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t read = 0;
-
+	
 	/* EOF is defined in stdio.h (and is usually -1). */
-	printf(">");
+	prompt_shell();
 	read = getline(&line, &len, stdin);
 
 	if (read == EOF)
