@@ -36,8 +36,8 @@ char **_strtok(char *argv)
 		i++;
 		word_line = strtok(NULL, delimt);
 	}
+	free(argv);
 	free(word_line);
-	word_line = NULL;
 	words[i] = NULL;
 	return (words);
 }
