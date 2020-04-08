@@ -3,8 +3,8 @@
 /* FUNCION MENSAJE PROMPT*/
 void prompt_shell(void)
 {
-	write(STDOUT, "\e[1;31mMi_shell/user@root$ ", 32);
-	write(STDOUT, "\e[0m", 4);
+	write(STDOUT, "\033[1;31mMi_shell/user@root$ ", 32);
+	write(STDOUT, "\033[0m", 4);
 }
 
 
