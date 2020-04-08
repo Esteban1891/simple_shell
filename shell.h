@@ -21,9 +21,9 @@ int _strcmp(char *s1, char *s2);
 char **_strtok(char *argv);
 int _execev(char **argvs);
 char *_strcat(char *dest, char *src);
-
 void initiate_shell(void);
 void prompt_shell(void);
 void read_line(void);
+void free_grid(char **grid);
 
 #endif

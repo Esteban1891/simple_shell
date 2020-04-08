@@ -14,9 +14,16 @@ char *_getlines(void)
 	/* EOF is defined in stdio.h (and is usually -1). */
 	prompt_shell();
 	read = getline(&line, &len, stdin);
-
-	if (read == EOF)
+	
+	if (read <= 1 && read != EOF)
+	{
 		return (NULL);
+	}
+	if (read == EOF)
+	{
+		printf("\n");
+		exit(1);
+	}
 
 	return (line);
 }
