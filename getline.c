@@ -21,7 +21,7 @@ char *_getlines(void)
 	}
 	if (read == EOF)
 	{
-		printf("\n");
+		printf("\nclose\n");
 		exit(1);
 	}
 
