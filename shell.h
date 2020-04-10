@@ -9,6 +9,8 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 
+#define PATH_DELIMIT "=:"
+#define DELIMIT " \t\r\n\a "
 #define BUFF_MAX 10 /* max buffer size*/
 #define MAXLIST 100 /* max number of commands to be supported.*/
 #define STDOUT STDOUT_FILENO /* abbreviating this variable.*/
@@ -23,7 +25,10 @@ int _execev(char **argvs);
 char *_strcat(char *dest, char *src);
 void initiate_shell(void);
 void prompt_shell(void);
-void read_line(void);
-void free_grid(char **grid);
-
+char **free_dp(char **dp);
+char *_strdup(char *str);
+char *str_concat(char *s1, char *s2);
+char *_strstr(char *haystack, char *needle);
+int _strlen(char *s);
+char **get_path(char **env);
 #endif
