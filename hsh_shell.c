@@ -1,6 +1,6 @@
 #include "shell.h"
 
-int main (int ac, char **av, char **env)
+int no_main (int ac, char **av, char **env)
 {
 	(void) ac;
 	(void) av;
@@ -32,7 +32,7 @@ int main (int ac, char **av, char **env)
 			status = _execev(split_argv);
 			/* free memory */
 			free(argv);
-			free_grid(split_argv);
+			split_argv = free_dp(split_argv);
 		}
     }
     return 0;

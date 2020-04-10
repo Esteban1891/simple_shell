@@ -3,8 +3,8 @@
 /**
  * count_chr - count how many chr  delimitn have *srt
  * @str: string
- * @chr: char to find in str
- * Return - int number
+ * @delimits: char to find in str
+ * Return: - int number
  */
 
 int count_chr(char *str, char *delimits)
@@ -14,7 +14,7 @@ int count_chr(char *str, char *delimits)
 	if (str != NULL && delimits != NULL)
 	{
 		for (i = 0; delimits[i] != '\0'; i++)
-			for(j = 0; str[j] != '\0'; j++)
+			for (j = 0; str[j] != '\0'; j++)
 				if (delimits[i] == str[j])
 					result++;
 	}
@@ -22,7 +22,7 @@ int count_chr(char *str, char *delimits)
 }
 
 /**
- * get_patht - get the PATH in the environment
+ * get_path - get the PATH in the environment
  * @env: enviroment var
  * Return: double ponter with each route in the path.
  */
@@ -31,14 +31,16 @@ char **get_path(char **env)
 	char *str = "PATH";
 	char *my_path;
 	char **paths;
-	unsigned int i = 0, j = 0;
+	unsigned int i = 0, j = 0, size;
 	/* loop for find the PATH var, in the **env */
 	while (env[i] != NULL)
 	{
 		my_path = _strstr(env[i], str);
 		if (my_path != NULL)
 		{
-			paths = (char **)malloc(sizeof(char *) * count_chr(my_path, PATH_DELIMIT) + 1);
+			printf("valor de cont is %d\n", count_chr(my_path, PATH_DELIMIT));
+			size = count_chr(my_path, PATH_DELIMIT) + BUFF_MAX;
+			paths = (char **)malloc(sizeof(char *) * size);
 			/* if fail copy path string or fail the malloc return NULL */
 			if (paths == NULL)
 				return (NULL);
@@ -57,7 +59,6 @@ char **get_path(char **env)
 			}
 			paths[j] = NULL;
 			return (paths);
-			
 		}
 		i++;
 	}
