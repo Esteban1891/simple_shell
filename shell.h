@@ -10,7 +10,7 @@
 #include <sys/wait.h>
 
 #define PATH_DELIMIT "=:"
-#define DELIMIT " \t\r\n\a "
+#define DELIMIT " \t\r\n\a"
 #define BUFF_MAX 10 /* max buffer size*/
 #define MAXLIST 100 /* max number of commands to be supported.*/
 #define STDOUT STDOUT_FILENO /* abbreviating this variable.*/

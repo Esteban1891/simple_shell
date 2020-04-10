@@ -10,21 +10,20 @@ char *_getlines(void)
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t read = 0;
-	
+
 	/* EOF is defined in stdio.h (and is usually -1). */
-	prompt_shell();
 	read = getline(&line, &len, stdin);
-	
-	if (read <= 1 && read != EOF)
+	if (line == NULL)
 	{
+		perror("Error allocated memory");
 		return (NULL);
 	}
+	/* if user type C-d */
 	if (read == EOF)
 	{
-		printf("\nclose\n");
+		free(line);
 		exit(1);
 	}
-
 	return (line);
 }
 
