@@ -23,7 +23,7 @@ char **_strtok(char *argv)
 {
 	char **words = NULL;
 	char *word_line = argv;
-	char *delimt = " ";
+	char *delimt = " \t\r\n\a :";
 	int i = 0;
 
 	words = (char **)malloc(BUF_SIZE * sizeof(char *));
