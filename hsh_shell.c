@@ -7,10 +7,15 @@ int main (int ac, char **av, char **env)
 	(void) env;
 
     int status = 0;
-
+    int valor_isatty = 0;
+    
 	initiate_shell();
     while (status != -1){
-	    prompt_shell();
+		valor_isatty = isatty(STDIN_FILENO);
+		if (valor_isatty == 1)
+		{
+	       prompt_shell();
+		}
 		/* get the input the command line */
 		char *argv = _getlines();
 		/* split the input line with strtok funtion and return 2d ponter */
