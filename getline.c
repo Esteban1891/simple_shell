@@ -21,8 +21,19 @@ char *_getlines(void)
 	/* if user type C-d */
 	if (read == EOF)
 	{
+		printf("\n");
 		free(line);
-		exit(1);
+		exit(EXIT_SUCCESS);
+	}
+	
+	if (strcmp(line,"exit\n") == 0)
+	{
+		free(line);
+		exit(EXIT_SUCCESS);
+	}
+	if (strcmp(line,"clear") == 0)
+	{
+		CLEAR_SCREEN;
 	}
 	return (line);
 }

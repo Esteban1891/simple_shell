@@ -3,7 +3,7 @@
  *
  */
 
-int main(int ac, char **av, char **env)
+int no_main(int ac, char **av, char **env)
 {
 
 	(void)ac;
@@ -11,6 +11,7 @@ int main(int ac, char **av, char **env)
 	(void)env;
 	int status = 0;
 	/* start test for getline.c and strtok.c */
+	initiate_shell();
 	do	{
 		prompt_shell();
 		char *str_line = _getlines();
@@ -18,8 +19,8 @@ int main(int ac, char **av, char **env)
 		char **test = _strtok(str_line);
 		char *p = NULL;
 
-		int i = 0;
 
+		int i = 0;
 		while (test[i] != NULL)
 		{
 			p = test[i];

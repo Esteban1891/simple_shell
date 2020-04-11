@@ -1,6 +1,6 @@
 #include "shell.h"
 
-int no_main (int ac, char **av, char **env)
+int main (int ac, char **av, char **env)
 {
 	(void) ac;
 	(void) av;
@@ -9,8 +9,8 @@ int no_main (int ac, char **av, char **env)
     int status = 0;
 
 	initiate_shell();
-    while (status != -1) {
-	
+    while (status != -1){
+	    prompt_shell();
 		/* get the input the command line */
 		char *argv = _getlines();
 		/* split the input line with strtok funtion and return 2d ponter */
@@ -19,15 +19,6 @@ int no_main (int ac, char **av, char **env)
 			char **split_argv = _strtok(argv);
 			/* check split_argv[0] for there is an bult-in funtion */
 			/* -----CALL FUNTION FOR BULT-IN FUNTIONS----- */
-			if (strcmp(split_argv[0],"exit") == 0)
-			{
-				exit(EXIT_SUCCESS);
-			}
-
-			if (strcmp(split_argv[0],"clear") == 0)
-			{
-				CLEAR_SCREEN;
-			}
 			/* call the funtion for executing external funtions with exec */
 			status = _execev(split_argv);
 			/* free memory */
