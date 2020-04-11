@@ -31,9 +31,18 @@ char *_getlines(void)
 		free(line);
 		exit(EXIT_SUCCESS);
 	}
-	if (strcmp(line,"clear") == 0)
+
+	if (strcmp(line,"\n") == 0)
 	{
+		free(line);
+		return(NULL);
+		//CLEAR_SCREEN;
+	}
+	if (strcmp(line,"k\n") == 0)
+	{
+		free(line);
 		CLEAR_SCREEN;
+		return(NULL);
 	}
 	return (line);
 }
