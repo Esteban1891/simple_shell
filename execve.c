@@ -1,29 +1,23 @@
 #include "shell.h"
 /**
- * execute_program - Execute a program
- * @token: Input recieved from strtok
+ * _execev - Execute a program
+ * @line: Input recieved from strtok
+ * @argv: arguments
+ * @num: inter var
+ * @isatty_val: tty pd
+ * @envi: enviroment var
  * Return: Nothing
  */
 void _execev(char **line, char *argv, int num, int isatty_val, char **envi)
 {
 	pid_t pid;
 	int _exec = 0;
-	int val_buil = 0;
 
 	if (line[0] == NULL)
 		return;
 
-	/**if (_strcmp(line[0], "exit") == 0)
-	{
-		free_dp(line);
-		_exit(0);
-	}*/
-
-	val_buil = is_buit_in(line, envi);
-	if (val_buil == 1)
-	{
+	if (is_buit_in(line, envi) != 1)
 		return;
-	}
 
 	pid = fork();
 	if (pid < 0)
