@@ -25,7 +25,6 @@ This shell executes binaries files that are inside
 $PATH
 directories.
 .PP
-.B
 Shell
 is the program that is running when user logs into the system \
 (The user can select a different shell with the chsh(1) command). \

@@ -93,6 +93,6 @@
 <pre><em><code>&nbsp;</code></em></pre>
 <pre><strong>Exiting command and hsh</strong></pre>
 <hr />
-<p>To exit out of a process or command,&nbsp;<code>ctrl c</code>&nbsp;is used. Control-C interrupts a process and causes it to abort.</p>
+<p>To exit out of a process or  command,&nbsp;<code>ctrl c</code>&nbsp;is used. Control-C interrupts a process and causes it to abort.</p>
 <p>To exit out of the hsh shell, the user can do one of the following,&nbsp;<code>ctrl D</code>&nbsp;or&nbsp;<code>exit n</code>. When exiting with&nbsp;<code>ctrl D</code>, an exit status of 0 is given. Using&nbsp;<code>exit</code>, you can input its exit status or it is defaulted to the status of the last command executed.</p>
 <p>&nbsp;</p>
