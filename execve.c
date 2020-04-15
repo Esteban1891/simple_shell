@@ -1,12 +1,12 @@
 #include "shell.h"
 /**
- * _execev - Execute a program
- * @line: Input recieved from strtok
- * @argv: arguments
- * @num: inter var
- * @isatty_val: tty pd
- * @envi: enviroment var
- * Return: Nothing
+ * _execev - Execute a programming exec
+ * @line:  recieved from strtok the token
+ * @argv: line of arguments of file
+ * @num:  variablei internal
+ * @isatty_val: is the tty
+ * @envi: enviroment variable
+ * Return: None
  */
 void _execev(char **line, char *argv, int num, int isatty_val, char **envi)
 {

@@ -2,8 +2,8 @@
 /**
  * is_buit_in - command environment
  * @line: wherever
- * @environ: add env
- * Return: if pointers is success
+ * @environ: add envi
+ * Return: if pointers is success.
  */
 int is_buit_in(char **line, char **environ)
 {

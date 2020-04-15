@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
  * _strcmp - Compares two strings
- * @s1: The string to test
- * @s2: The string to test
- * Return: An interer, the difference between strings
+ * @s1: The string to 1t
+ * @s2: The string to 1t
+ * Return: An interer to array
  */
 int _strcmp(char *s1, char *s2)
 {

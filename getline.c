@@ -2,9 +2,7 @@
 /**
  * get_line - Prints "Mi_shell/user@root$"  and wait for a command
  * @isatty_val: no_interactive
- *
  * Return: The read command (line)
- *
  **/
 char *get_line(int isatty_val)
 {

@@ -1,4 +1,3 @@
-/* prototypes owner */
 #ifndef SHELL_H
 #define SHELL_H
 #include <stdio.h>
@@ -21,13 +20,13 @@
 #define CLEAR_SCREEN write(STDOUT, "\033[H\033[J", 6) /*a macro*/
 #define NEW_LINE write(STDOUT, "\n", 1) /*a macro*/
 
-char *get_line(int isatty_val);
-char **_strtok(char *line_messages);
-void _execev(char **line, char *argv, int num, int isatty_val, char **envi);
-int is_buit_in(char **line, char **environ);
 void free_dp(char **line);
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
 void _exit_function();
 void prompt_shell(void);
+char *get_line(int isatty_val);
+char **_strtok(char *line_messages);
+void _execev(char **line, char *argv, int num, int isatty_val, char **envi);
+int is_buit_in(char **line, char **environ);
 #endif

@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
- * _strtok - Split a string into tokens
- * @line_messages: Input recieved from user input
+ * _strtok - Split to token of strok
+ * @line_messages: recieved to user
  * Return: the chit(s)
  */
 char **_strtok(char *line_messages)

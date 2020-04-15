@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * free_dp - free to file
+ * free_dp - free all file
  * @line: double pointer to free
  *
  * Return: ptr null

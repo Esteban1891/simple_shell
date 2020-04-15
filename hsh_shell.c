@@ -2,8 +2,8 @@
 
 /**
  * main - Executes all main functions
- * @argc: Number of arguments
- * @av: Array of string pointers with arguments
+ * @argc:  count to arguments
+ * @av:  pointers with arguments
  * @env: wherever
  * Return: Nothing
  */
