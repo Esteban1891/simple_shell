@@ -3,7 +3,8 @@
 /**
  * main - Executes all main functions
  * @argc: Number of arguments
- * @argv: Array of string pointers with arguments
+ * @av: Array of string pointers with arguments
+ * @env: wherever
  * Return: Nothing
  */
 
@@ -17,11 +18,11 @@ int main(int argc __attribute__((unused)), char **av, char **env)
 		val_isatty = isatty(STDIN_FILENO);
 		string = get_line(val_isatty);
 
-		if (_strcmp(string, "exit\n") == 0)
-		  {
-		  free(string);
-		  exit(0);
-		  }
+if (_strcmp(string, "exit\n") == 0)
+{
+free(string);
+exit(0);
+}
 
 		if (string != NULL)
 		{

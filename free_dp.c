@@ -1,4 +1,10 @@
 #include "shell.h"
+/**
+ * free_dp - free to file
+ * @line: double pointer to free
+ *
+ * Return: ptr null
+ */
 
 void free_dp(char **line)
 {
