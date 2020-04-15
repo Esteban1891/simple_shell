@@ -1,21 +1,23 @@
 #include "shell.h"
-/**
- *_strcmp - funtion compare two string
- *@s1: Punter one
- *@s2: Punter two
- *Return: integer
- */
 
+/**
+ * _strcmp - compares two strings
+ * @s1: string one to compare
+ * @s2: string two to compare
+ * Return: an integer less than 0 if s1 is found
+ */
 int _strcmp(char *s1, char *s2)
 {
-	while (*s1 == *s2)
-	{
-		s1++;
-		s2++;
-		/* en s1 se debe buscar el salto de linea */
-		if (*s1 == '\n' && *s2 == '\0')
-			return (0);
-	}
-	return (-1);
-}
+	int x;
 
+	for (x = 0; s1[x] != '\0'; x++)
+		;
+	for (x = 0; s2[x] != '\0'; x++)
+	{
+		if (s1[x] != s2[x])
+		{
+			return (s1[x] - s2[x]);
+		}
+	}
+	return (0);
+}

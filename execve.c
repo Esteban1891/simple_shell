@@ -1,16 +1,15 @@
 #include "shell.h"
-
 /**
- * _statusev - executa a external funtion
+ * _execev - executa a external funtion
  * @argvs: arguments
+ * @env: arguments
  * Return: double pointer to string
  */
-int _execev(char **argvs)
+int _execev(char **argvs, char **env)
 {
 	pid_t pid;
 	int status;
-/*	char *path = "/bin/ls";*/
-
+	(void)argvs;
 
 	pid = fork();
 	if (pid < 0)
@@ -25,13 +24,14 @@ int _execev(char **argvs)
 	}
 	else
 	{
-		status = execve(argvs[0], argvs, NULL);
+		status = execve(argvs[0], argvs, env);
 		if (status < 0)
 		{
 			free_dp(argvs);
 			perror("Error");
 			exit(-1);
 		}
-	}
-	return (0);
+		exit(EXIT_SUCCESS);
+}
+return (0);
 }

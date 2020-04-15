@@ -29,27 +29,31 @@ int count_chr(char *str, char *delimits)
 char **get_path(char **env)
 {
 	char *str = "PATH";
-	char *my_path;
+	char *my_path, *aux;
 	char **paths;
 	unsigned int i = 0, j = 0, size;
+
+	if (env == NULL)
+		return (NULL);
+
 	/* loop for find the PATH var, in the **env */
 	while (env[i] != NULL)
 	{
-		my_path = _strstr(env[i], str);
-		if (my_path != NULL)
+		aux = _strstr(env[i], str);
+		if (aux != NULL)
 		{
-			printf("valor de cont is %d\n", count_chr(my_path, PATH_DELIMIT));
-			size = count_chr(my_path, PATH_DELIMIT) + BUFF_MAX;
+			aux = _strdup(aux);
+			size = count_chr(aux, PATH_DELIMIT) + BUFF_MAX;
 			paths = (char **)malloc(sizeof(char *) * size);
 			/* if fail copy path string or fail the malloc return NULL */
 			if (paths == NULL)
 				return (NULL);
 			/* split all string and return pointer to each memory positions */
-			strtok(my_path, PATH_DELIMIT);
+			my_path = strtok(aux, PATH_DELIMIT);
 			while (my_path != NULL)
 			{
 				/* make a copy in new memory allocation for each string */
-				paths[j] = strdup(my_path);
+				paths[j] = _strdup(my_path);
 				/* validate if copy is done else return NULL */
 				if (paths[j] == NULL)
 					return (free_dp(paths));
@@ -58,6 +62,7 @@ char **get_path(char **env)
 				my_path = strtok(NULL, PATH_DELIMIT);
 			}
 			paths[j] = NULL;
+			free(aux);
 			return (paths);
 		}
 		i++;

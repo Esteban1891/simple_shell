@@ -1,35 +1,50 @@
 #include "shell.h"
+/**
+ * main - all my functions
+ * @ac: operation
+ * @av: operation
+ * @envs: operation
+ *
+ * Return: pointer to the correct function
+ */
 
-int main (int ac, char **av, char **env)
+int main(int ac, char **av, char **envs)
 {
-	(void) ac;
-	(void) av;
-	(void) env;
 
-    int status = 0;
-    int valor_isatty = 0;
-    
-	initiate_shell();
-    while (status != -1){
-		valor_isatty = isatty(STDIN_FILENO);
-		if (valor_isatty == 1)
-		{
-	       prompt_shell();
-		}
-		/* get the input the command line */
-		char *argv = _getlines();
-		/* split the input line with strtok funtion and return 2d ponter */
+
+	int status = 0, errno = 1;
+	char **env = envs;
+	(void)ac;
+
+	/**initiate_shell();*/
+	while (status != -1)
+	{
+		/* if shell run in no-interactive mode no show prompt */
+		if (isatty(STDIN_FILENO) == 1)
+			prompt_shell();
+
+		/* 1. get the input the command line */
+		char *argv = _getlines(isatty(STDIN_FILENO));
+
 		if (argv != NULL)
 		{
+			/* 2. split the input line with strtok funtion and return 2d ponter */
 			char **split_argv = _strtok(argv);
-			/* check split_argv[0] for there is an bult-in funtion */
-			/* -----CALL FUNTION FOR BULT-IN FUNTIONS----- */
-			/* call the funtion for executing external funtions with exec */
-			status = _execev(split_argv);
+			/* 3. find if is a built-in funtion  */
+			if (is_built_in(split_argv, env) != 0)
+			{
+			/* 4. not is a built, find in the path, if math execve else error msn */
+				if (check_path(env, split_argv) == 0)
+					status = _execev(split_argv, env);
+				else
+					printf("%s: %d: %s: not found\n", av[0], errno, split_argv[0]);
+			}
+			/* ejeccution counter */
+			errno++;
 			/* free memory */
 			free(argv);
 			split_argv = free_dp(split_argv);
 		}
-    }
-    return 0;
+	}
+	return (0);
 }

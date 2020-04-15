@@ -33,7 +33,7 @@ int _equal(char *dest, char *src)
 char *_strstr(char *haystack, char *needle)
 {
 	if (*haystack == '\0')
-		return 0;
+		return (0);
 
 	if (*needle == '\0')
 		return (haystack);
