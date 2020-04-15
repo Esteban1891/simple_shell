@@ -1,8 +1,7 @@
-  
 #include "shell.h"
 /**
  * prompt_shell - function to print the prompt
- *
+ * @void: wherever
  * Return: none
  */
 void prompt_shell(void)

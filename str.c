@@ -8,6 +8,7 @@
 int _strcmp(char *s1, char *s2)
 {
 	int i = 0;
+
 	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
 	{
 		i++;
@@ -23,8 +24,8 @@ int _strcmp(char *s1, char *s2)
  */
 int _strlen(char *s)
 {
-	int contador = 0;
-	int indice = 0;
+	int contador = 0, indice = 0;
+
 	while (s[indice] != '\0')
 	{
 		contador++;
