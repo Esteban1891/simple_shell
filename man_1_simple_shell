@@ -1,5 +1,3 @@
-.\" Manpage for hsh.
-.\" Contact to Esteban De La Hoz/ Jose Vallejo of errors or typos.
 .TH man 1 "14 April 2020" "1.0" "simple_shell"
 .SH NAME
 hsh \- Command Line Interpreter
