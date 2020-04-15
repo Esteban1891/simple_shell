@@ -23,7 +23,7 @@
 void free_dp(char **line);
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
-void _exit_function();
+void _exit_function(void);
 void prompt_shell(void);
 char *get_line(int isatty_val);
 char **_strtok(char *line_messages);
