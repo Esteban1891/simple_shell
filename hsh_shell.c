@@ -1,50 +1,37 @@
 #include "shell.h"
+
 /**
- * main - all my functions
- * @ac: operation
- * @av: operation
- * @envs: operation
- *
- * Return: pointer to the correct function
+ * main - Executes all main functions
+ * @argc: Number of arguments
+ * @argv: Array of string pointers with arguments
+ * Return: Nothing
  */
 
-int main(int ac, char **av, char **envs)
+int main(int argc __attribute__((unused)), char **av, char **env)
 {
+	char *string = NULL, **line = NULL;
+	int _num_prompt = 0, val_isatty = 0;
 
-
-	int status = 0, errno = 1;
-	char **env = envs;
-	(void)ac;
-
-	/**initiate_shell();*/
-	while (status != -1)
+	while (1)
 	{
-		/* if shell run in no-interactive mode no show prompt */
-		if (isatty(STDIN_FILENO) == 1)
-			prompt_shell();
+		val_isatty = isatty(STDIN_FILENO);
+		string = get_line(val_isatty);
 
-		/* 1. get the input the command line */
-		char *argv = _getlines(isatty(STDIN_FILENO));
+		if (_strcmp(string, "exit\n") == 0)
+		  {
+		  free(string);
+		  exit(0);
+		  }
 
-		if (argv != NULL)
+		if (string != NULL)
 		{
-			/* 2. split the input line with strtok funtion and return 2d ponter */
-			char **split_argv = _strtok(argv);
-			/* 3. find if is a built-in funtion  */
-			if (is_built_in(split_argv, env) != 0)
-			{
-			/* 4. not is a built, find in the path, if math execve else error msn */
-				if (check_path(env, split_argv) == 0)
-					status = _execev(split_argv, env);
-				else
-					printf("%s: %d: %s: not found\n", av[0], errno, split_argv[0]);
-			}
-			/* ejeccution counter */
-			errno++;
-			/* free memory */
-			free(argv);
-			split_argv = free_dp(split_argv);
+			_num_prompt++;
+			line = _strtok(string);
+			_execev(line, av[0], _num_prompt, val_isatty, env);
+			free(string);
+			free(line);
 		}
+		val_isatty = 0;
 	}
 	return (0);
 }

@@ -1,50 +1,33 @@
 #include "shell.h"
-
 /**
- * _getlines - get info the CLI
+ * get_line - Prints "Mi_shell/user@root$"  and wait for a command
+ * @isatty_val: no_interactive
  *
- * @val_isatty: return value of isatty
- * Return: pointer to string inf typed for user
- */
-
-char *_getlines(int val_isatty)
+ * Return: The read command (line)
+ *
+ **/
+char *get_line(int isatty_val)
 {
-	char *line = NULL;
-	size_t bufer_len = 1024;
 	ssize_t read = 0;
-	/**EOF is defined in stdio.h (and is usually -1).*/
-	read = getline(&line, &bufer_len, stdin);
-	if (line == NULL)
+	size_t bufer_len = 0;
+	char *line = NULL;
+
+	if (isatty_val == 1)
 	{
-		perror("Error allocated memory");
-		return (NULL);
+	write(STDOUT, "\033[1;31mMi_shell/user@root$ ", 32);
+	write(STDOUT, "\033[0m", 4);
 	}
-	/**if user type C-d */
+
+	read = getline(&line, &bufer_len, stdin);
+
 	if (read == EOF)
 	{
-		if (val_isatty == 1)
+		if (isatty_val == 1)
 		{
 			printf("\n");
 		}
 		free(line);
-		exit(98);
-	}
-	if (strcmp(line, "exit\n") == 0)
-	{
-		free(line);
-		exit(98);
-	}
-	if (strcmp(line, "\n") == 0)
-	{
-		free(line);
-		return (NULL);
-		/**CLEAR_SCREEN;*/
-	}
-	if (strcmp(line, "k\n") == 0)
-	{
-		free(line);
-		CLEAR_SCREEN;
-		return (NULL);
+		exit(EXIT_SUCCESS);
 	}
 	return (line);
 }

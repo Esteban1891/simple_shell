@@ -1,22 +1,14 @@
 #include "shell.h"
 
-/**
- * free_dp - free memory allocated in double ponter
- * @dp: double pointer var
- * Return: alway NULL
- */
-
-char **free_dp(char **dp)
+void free_dp(char **line)
 {
-	int i = 0;
+	int x;
 
-	while (dp[i] != NULL)
+	for (x = 0; line[x]; x++)
 	{
-		free(dp[i]);
-		i++;
+		free(line[x]);
+		line[x] = NULL;
 	}
-	free(dp);
-	dp = NULL;
-	return (NULL);
+	free(line);
+	line = NULL;
 }
-

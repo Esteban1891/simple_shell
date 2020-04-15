@@ -1,78 +1,50 @@
 #include "shell.h"
-
 /**
- * is_built_in - check if is a funtion in
- * @argvs: arguments get in stdin
- * @env: enviroment var
- * Return: Always inter num
+ * is_buit_in - command environment
+ * @line: wherever
+ * @environ: add env
+ * Return: if pointers is success
  */
-
-int is_built_in(char **argvs, char **env)
+int is_buit_in(char **line, char **environ)
 {
-	/* env built-in fun print the enviroment var */
-	if (_strcmp(argvs[0], "env") == 0)
-		return (_env(env));
+	int chdir_val = 0, i;
 
-	/* cd is internal funtion for navegate in the directory */
-	if (_strcmp(argvs[0], "cd") == 0)
-		return (_cd(argvs));
-
-	/* if no math return -1 */
-	return (-1);
-
-}
-
-/**
- * _env - a program that prints the parameter
- * @env: function to  the parameter
- * Return: inter number
- */
-
-
-int _env(char **env)
-{
-	unsigned int i;
-	char *p;
-
-	i = 0;
-
-	if (env == NULL)
-		return (-1);
-
-	while (env[i] != NULL)
+	if (_strcmp(line[0], "exit") == 0 && !line[1])
 	{
-		p = env[i];
-		printf("%s\n", p);
-		i++;
+		free_dp(line);
+		_exit_function();
 	}
-	return (0);
-}
 
-/**
- * _cd- function buitl_in for enviroments
- * @argvs: operation to arguments
- *
- * Return: pointer to the correct function
- */
-
-int _cd(char **argvs)
-{
-	int chdir_num;
-
-	if (strcmp(argvs[0], "cd") == 0)
+	if (_strcmp(line[0], "cd") == 0)
 	{
-		if (!argvs[1])
+		if (!line[1])
 		{
-			chdir_num = chdir("..");
-			return (0);
+			chdir_val = chdir("..");
+			if (chdir_val != 0)
+			{
+				printf("Error changing directory\n");
+				return (1);
+			}
+			return (1);
 		}
-		chdir_num = chdir(argvs[1]);
-		if (chdir_num != 0)
+
+		chdir_val = chdir(line[1]);
+
+		if (chdir_val != 0)
 		{
-			printf("Error changing directory\n");
-			return (0);
+			printf("Error changing directory to: %s\n", line[1]);
+			return (1);
 		}
-		return (0);
+		return (1);
+	}
+
+	if (_strcmp(line[0], "env") == 0 && !(line[1]))
+	{
+		for (i = 0; environ[i]; i++)
+		{
+			printf("%s\n", environ[i]);
+		}
+		return (1);
 	}
 	return (EXIT_SUCCESS);
 }
