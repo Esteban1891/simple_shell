@@ -74,5 +74,5 @@ int _cd(char **argvs)
 		}
 		return (0);
 	}
-	return(EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
 }
