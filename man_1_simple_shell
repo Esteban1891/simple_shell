@@ -1,7 +1,9 @@
+.\" Manpage for hsh.
+.\" Contact to Esteban De La Hoz/ Jose Vallejo of errors or typos.
 .TH man 1 "14 April 2020" "1.0" "simple_shell"
 .SH NAME
 hsh \- Command Line Interpreter
-.SH MIMI_SHELL
+.SH SYNOPSIS
 .B
 hsh [command_string | file]
 .SH DESCRIPTION
@@ -23,6 +25,7 @@ This shell executes binaries files that are inside
 $PATH
 directories.
 .PP
+.B
 Shell
 is the program that is running when user logs into the system \
 (The user can select a different shell with the chsh(1) command). \
@@ -75,7 +78,27 @@ If a builtin command is not found, one of two things happen:
 .B
 Exit Status
 
+.SH It by default exits with status 0. 
+.B [Options] [More Options]
+.br
 
+.B #include <stdio.h>
+.br
+.B #include <stdlib.h>
+.br
+.B #include <sys/types.h>
+.br
+.B #include <unistd.h>
+.br
+.B #include <sys/wait.h>
+.br
+.B #include <string.h>
+.br
+.B #include <sys/stat.h>
+.br
+.B #include <fcntl.h>
+.br
+.SH SEE ALSO
 
 hsh(1), sh(1), echo(1), hsh(1), environ(7)
 
