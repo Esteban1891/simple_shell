@@ -76,7 +76,7 @@ If a builtin command is not found, one of two things happen:
 .B
 Exit Status
 
-.SH It by default exits with status 0. 
+.SH It by default exits with status 0.
 .B [Options] [More Options]
 .br
 
