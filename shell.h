@@ -36,4 +36,8 @@ char *_strdup(char *str);
 char **get_path(char **env);
 int count_chr(char *str, char *delimits);
 int check_path(char **env, char **argvs);
+char *_getenv(const char *name);
+void printenv(void);
+int _putchar(char c);
+extern char **environ;
 #endif
