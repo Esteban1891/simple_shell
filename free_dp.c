@@ -6,7 +6,7 @@
  * Return: ptr null
  */
 
-void free_dp(char **line)
+char **free_dp(char **line)
 {
 	int x;
 
@@ -17,4 +17,5 @@ void free_dp(char **line)
 	}
 	free(line);
 	line = NULL;
+	return (NULL);
 }

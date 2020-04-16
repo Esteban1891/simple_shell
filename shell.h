@@ -20,7 +20,7 @@
 #define CLEAR_SCREEN write(STDOUT, "\033[H\033[J", 6) /*a macro*/
 #define NEW_LINE write(STDOUT, "\n", 1) /*a macro*/
 
-void free_dp(char **line);
+char **free_dp(char **line);
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
 void _exit_function(void);
@@ -29,4 +29,11 @@ char *get_line(int isatty_val);
 char **_strtok(char *line_messages);
 void _execev(char **line, char *argv, int num, int isatty_val, char **envi);
 int is_buit_in(char **line, char **environ);
+char *_strstr(char *haystack, char *needle);
+int _equal(char *dest, char *src);
+char *str_concat(char *s1, char *s2);
+char *_strdup(char *str);
+char **get_path(char **env);
+int count_chr(char *str, char *delimits);
+int check_path(char **env, char **argvs);
 #endif
