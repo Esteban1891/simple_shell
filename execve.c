@@ -33,7 +33,8 @@ void _execev(char **line, char *argv, int num, int isatty_val, char **envi)
 	}
 	else
 	{
-		_exec = execve(line[0], line, NULL);
+		if (check_path(envi, line) == 0)
+			_exec = execve(line[0], line, NULL);
 		if (_exec < 0)
 		{
 			if (isatty_val == 1)
