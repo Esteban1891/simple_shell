@@ -16,6 +16,31 @@ hsh$
 hsh$ exit
 $ `
 
+### Env
+
+Prints out the current environment.
+
+### cd
+
+The cd command, also known as chdir, is a command-line shell command used to change the current working directory in various operating systems
+
+### List of useful commands
+
+cat - The most common use of cat is to read the contents of files
+
+cp - copy files to another file
+
+grep - searches a file for a specified pattern
+
+less - less is a command that displays file contents or command output one page at a time in your terminal
+
+ls - lists all files and directories
+
+mv - moves one file into another file
+
+pwd - prints out the current working directory
+
+
 ### Non-interactive mode
 `$ echo "/bin/ls" | ./hsh
 hsh main.c shell.c
@@ -40,6 +65,12 @@ $ echo "qwerty" | ./././hsh
 ./././hsh: 1: qwerty: not found
 $`
 
+### installation
+
+* - git clone https://github.com/JennieChu/simple_shell.git
+* - cd shell
+* - gcc -Wall -Werror -Wextra -pedantic * .c -o hsh
+* - Enjoy it
 
 ## Files
 
