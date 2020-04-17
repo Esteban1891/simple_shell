@@ -19,6 +19,8 @@
 #define STDOUT STDOUT_FILENO /* abbreviating this variable.*/
 #define CLEAR_SCREEN write(STDOUT, "\033[H\033[J", 6) /*a macro*/
 #define NEW_LINE write(STDOUT, "\n", 1) /*a macro*/
+#define TOK_BUFSIZE 64
+extern char **environ;
 
 char **free_dp(char **line);
 int _strlen(char *s);
@@ -36,6 +38,8 @@ char *_strdup(char *str);
 char **get_path(char **env);
 int count_chr(char *str, char *delimits);
 int check_path(char **env, char **argvs);
+void func_printenv(char **environ);
 int _putchar(char c);
-int printenv(char **environ);
+void _puts(char *str);
+char **search_path(char **environ);
 #endif

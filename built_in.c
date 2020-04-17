@@ -38,34 +38,21 @@ int is_buit_in(char **line, char **environ)
 		return (1);
 	}
 
-	if (_strcmp(line[0], "env") == 0)
-		return (printenv(environ));
+if ((_strcmp(line[0], "env") == 0) && line[1] == NULL)
+		func_printenv(environ);      /*Encuentra el enviroment*/
 
 	return (EXIT_SUCCESS);
 }
 
-
 /**
- * printenv - prints the environment of a process
- * @environ: double pointer
- *
- * Return: void
+ * func_printenv - prints the current environment
+ * @environ: environment variable
  */
-int printenv(char **environ)
+void func_printenv(char **environ)
 {
-	unsigned int i, j;
+	int i = 0;
 
-	i = 0;
-	while (environ[i] != NULL)
-	{
-		j = 0;
-		while (environ[i][j] != '\0')
-		{
-			_putchar(environ[i][j]);
-			j++;
-		}
-		_putchar('\n');
-	}
-	return (0);
+	for (; environ[i] ; i++)
+
+		_puts(environ[i]); /*imprime todo el environment*/
 }
-
