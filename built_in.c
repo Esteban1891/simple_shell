@@ -12,7 +12,6 @@ int is_buit(char **line, char **environ)
 	if (_strcmp(line[0], "exit") == 0 && line[1] == NULL)
 	{
 		free_dp(line);
-		_exit_function();
 		return (1);
 	}
 
