@@ -1,11 +1,11 @@
 #include "shell.h"
 /**
- * is_buit_in - command environment
+ * is_buit - command environment
  * @line: wherever
  * @environ: add envi
  * Return: if pointers is success.
  */
-int is_buit_in(char **line, char **environ)
+int is_buit(char **line, char **environ)
 {
 	int chdir_val = 0;
 
@@ -38,21 +38,21 @@ int is_buit_in(char **line, char **environ)
 		return (1);
 	}
 
-if ((_strcmp(line[0], "env") == 0) && line[1] == NULL)
-		func_printenv(environ);      /*Encuentra el enviroment*/
+	if ((_strcmp(line[0], "env") == 0) && line[1] == NULL)
+		_printenv(environ);
 
 	return (EXIT_SUCCESS);
 }
 
 /**
- * func_printenv - prints the current environment
+ * _printenv - prints the current environment
  * @environ: environment variable
  */
-void func_printenv(char **environ)
+void _printenv(char **environ)
 {
-	int i = 0;
+	int x = 0;
 
-	for (; environ[i] ; i++)
+	for (; environ[x] ; x++)
 
-		_puts(environ[i]); /*imprime todo el environment*/
+		_puts(environ[x]); /*imprime todo el environment*/
 }
