@@ -19,7 +19,6 @@
 #define STDOUT STDOUT_FILENO /* abbreviating this variable.*/
 #define CLEAR_SCREEN write(STDOUT, "\033[H\033[J", 6) /*a macro*/
 #define NEW_LINE write(STDOUT, "\n", 1) /*a macro*/
-extern char **environ;
 
 char **free_dp(char **line);
 int _strlen(char *s);

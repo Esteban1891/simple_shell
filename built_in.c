@@ -55,7 +55,6 @@ int printenv(char **environ)
 {
 	unsigned int i, j;
 
-printf("**********");
 	i = 0;
 	while (environ[i] != NULL)
 	{
@@ -66,8 +65,6 @@ printf("**********");
 			j++;
 		}
 		_putchar('\n');
-		i++;
-printf("**********");
 	}
 	return (0);
 }
