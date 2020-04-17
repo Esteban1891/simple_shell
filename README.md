@@ -67,7 +67,7 @@ $`
 
 ### installation
 
-* - git clone https://github.com/JennieChu/simple_shell.git
+* - git clone https://github.com/Esteban1891/simple_shell.git 
 * - cd shell
 * - gcc -Wall -Werror -Wextra -pedantic * .c -o hsh
 * - Enjoy it
