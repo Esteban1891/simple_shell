@@ -7,7 +7,7 @@
  */
 int is_buit_in(char **line, char **environ)
 {
-	int chdir_val = 0, i;
+	int chdir_val = 0;
 
 	if (_strcmp(line[0], "exit") == 0 && !line[1])
 	{
@@ -38,13 +38,37 @@ int is_buit_in(char **line, char **environ)
 		return (1);
 	}
 
-	if (_strcmp(line[0], "env") == 0 && !(line[1]))
-	{
-		for (i = 0; environ[i]; i++)
-		{
-			printf("%s\n", environ[i]);
-		}
-		return (1);
-	}
+	if (_strcmp(line[0], "env") == 0)
+		return (printenv(environ));
+
 	return (EXIT_SUCCESS);
 }
+
+
+/**
+ * printenv - prints the environment of a process
+ * @environ: double pointer
+ *
+ * Return: void
+ */
+int printenv(char **environ)
+{
+	unsigned int i, j;
+
+printf("**********");
+	i = 0;
+	while (environ[i] != NULL)
+	{
+		j = 0;
+		while (environ[i][j] != '\0')
+		{
+			_putchar(environ[i][j]);
+			j++;
+		}
+		_putchar('\n');
+		i++;
+printf("**********");
+	}
+	return (0);
+}
+
