@@ -9,10 +9,11 @@ int is_buit(char **line, char **environ)
 {
 	int chdir_val = 0;
 
-	if (_strcmp(line[0], "exit") == 0 && !line[1])
+	if (_strcmp(line[0], "exit") == 0 && line[1] == NULL)
 	{
 		free_dp(line);
 		_exit_function();
+		return (1);
 	}
 
 	if (_strcmp(line[0], "cd") == 0)
