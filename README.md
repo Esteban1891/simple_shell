@@ -1,5 +1,9 @@
 # Simple_shell :wrench:
+
 ![img](https://i.stack.imgur.com/dRKaU.gif)
+
+---
+
 Write a simple shell command line interpreter Unix in C
 
 ## Compile program
