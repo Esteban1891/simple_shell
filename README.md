@@ -1,4 +1,4 @@
-# Simple_shell
+# Simple_shell :wrench:
 <img src="https://i.stack.imgur.com/ZsJLo.gif" alt="Simple_shell">
 Write a simple shell command line interpreter Unix in C
 
